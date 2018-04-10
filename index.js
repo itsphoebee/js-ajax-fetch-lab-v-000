@@ -2,28 +2,6 @@ const userName = 'itsphoebee'
 const baseApi = 'https://api.github.com/'
 const fork = `${userName}/javascript-fetch-lab`
 
-//Issue and Repo objects and templates
-
-function Issue(attributes){
-  this.title = attributes.title;
-  this.body = attributes.body;
-  this.url = attributes.url;
-}
-
-function Repo(attributes){
-  this.url = attributes.url;
-}
-
-Issue.prototype.template = function(){
-   var template = `<li>Title: <a href="${this.url}">${this.title} </a><span> | Body: ${this.body}</span></li>`
-   return template;
-};
-
-Repo.prototype.template = function(){
-  var template = `<h3>Forked Successfully!</h3><a href="${this.url}"> ${this.url}</a>`
-  return template;
-};
-
 //Create an issue through the Github API
 
 function createIssue() {
