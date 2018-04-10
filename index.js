@@ -5,9 +5,10 @@ const fork = `${userName}/javascript-fetch-lab`
 //Create an issue through the Github API
 
 function createIssue() {
-  const issueTitle = document.getElementById('title').value
-  const issueBody = document.getElementById('body').value
-  const postData = { title: issueTitle, body: issueBody }
+  const postData = {
+    title: document.getElementById('title').value,
+    body: document.getElementById('body').value
+  }
   fetch(`${baseApi}repos/${fork}/issues`, {
     method: 'post',
     headers: {
